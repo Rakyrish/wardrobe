@@ -3,7 +3,7 @@ import Header from "@/app/layout/header/page";
 import Footer from "@/app/layout/footer/page";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-//   const router = useRouter();
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent page reload
@@ -50,7 +50,7 @@ export default function LoginPage() {
 
       setSuccess("Login successful!");
       // Redirect to dashboard after successful login
-    //   router.push("/dashboard");
+      router.push("/");
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "An unexpected error occurred.";
       console.error("Login error:", errorMessage);
