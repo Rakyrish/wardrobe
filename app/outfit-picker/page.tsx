@@ -1,6 +1,4 @@
 'use client';
-import Header from "@/app/layout/header/page";
-import Footer from "@/app/layout/footer/page";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -164,20 +162,15 @@ export default function OutfitPickerPage() {
   if (isLoading) {
     return (
       <div className="flex flex-col min-h-screen bg-gray-100">
-        <Header />
         <main className="flex flex-1 items-center justify-center">
-          <p className="text-gray-600">Loading...</p>
+          <p className="text-gray-600 justify-center align-center ">Loading...</p>
         </main>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <div className="w-full bg-gradient-to-r from-blue-100 via-white to-pink-100/80 backdrop-blur-md border-b border-blue-200 shadow-md">
-        <Header />
-      </div>
       <main className="flex flex-1 flex-col items-center px-4 py-8 bg-gradient-to-br from-blue-50 via-white to-pink-100">
         <div className="w-full max-w-4xl">
           <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">
@@ -237,9 +230,6 @@ export default function OutfitPickerPage() {
           />
         </div>
       </main>
-      <div className="w-full bg-white border-t border-blue-100 shadow-inner">
-        <Footer />
-      </div>
     </div>
   );
 }

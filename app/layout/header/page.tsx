@@ -116,12 +116,19 @@ export default function Header() {
           <span className="absolute left-1/2 -bottom-1 w-0 h-1 bg-pink-400 rounded-full group-hover:w-2/3 transition-all duration-300 -translate-x-1/2"></span>
         </a>
         <a
+          href="/weather"
+          className="relative px-3 py-1 rounded-full hover:bg-blue-50 hover:text-pink-500 transition font-medium group"
+        >
+          Weather
+          <span className="absolute left-1/2 -bottom-1 w-0 h-1 bg-pink-400 rounded-full group-hover:w-2/3 transition-all duration-300 -translate-x-1/2"></span>
+        </a>
+        {/* <a
           href="#"
           className="relative px-3 py-1 rounded-full hover:bg-blue-50 hover:text-pink-500 transition font-medium group"
         >
           About
           <span className="absolute left-1/2 -bottom-1 w-0 h-1 bg-pink-400 rounded-full group-hover:w-2/3 transition-all duration-300 -translate-x-1/2"></span>
-        </a>
+        </a> */}
         {/* <button
           type="button"
           className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 hover:bg-pink-100 transition border border-blue-200 shadow"

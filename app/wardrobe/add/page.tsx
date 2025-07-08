@@ -1,6 +1,5 @@
 'use client';
-import Header from "@/app/layout/header/page";
-import Footer from "@/app/layout/footer/page";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -84,9 +83,6 @@ export default function AddWardrobeItem() {
 
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-100 via-white to-pink-100">
-            <div className="w-full bg-white/80 backdrop-blur-md border-b border-blue-200 shadow-md">
-                <Header />
-            </div>
             <main className="flex flex-1 items-center justify-center px-4 py-12">
                 <div className="relative bg-white/90 p-10 rounded-3xl shadow-2xl w-full max-w-lg border border-blue-100">
                     {/* Decorative gradient circle */}
@@ -197,9 +193,7 @@ export default function AddWardrobeItem() {
                     </form>
                 </div>
             </main>
-            <div className="w-full bg-white/80 border-t border-blue-100 shadow-inner">
-                <Footer />
-            </div>
+            
             <style jsx global>{`
                 @keyframes shake {
                     10%, 90% { transform: translateX(-1px); }
