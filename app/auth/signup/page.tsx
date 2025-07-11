@@ -1,6 +1,4 @@
 'use client';
-import Header from "@/app/layout/header/page";
-import Footer from "@/app/layout/footer/page";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -77,9 +75,6 @@ export default function SignUpPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      <div className="w-full bg-gradient-to-r from-blue-100 via-white to-pink-100/80 backdrop-blur-md border-b border-blue-200 shadow-md">
-        <Header />
-      </div>
       <main className="flex flex-1 items-center justify-center px-4 py-8 bg-gradient-to-br from-blue-50 via-white to-pink-100">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
@@ -205,9 +200,6 @@ export default function SignUpPage() {
           </p>
         </div>
       </main>
-      <div className="w-full bg-white border-t border-blue-100 shadow-inner">
-        <Footer />
-      </div>
     </div>
   );
 }

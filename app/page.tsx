@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import Header from "./layout/header/page";
-import Footer from "./layout/footer/page";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../lib/supabase";
@@ -45,8 +43,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-100 flex flex-col items-center justify-between font-[family-name:var(--font-geist-sans)]">
-    
-     <Header />
       <main className="flex-1 flex flex-col-reverse md:flex-row items-center justify-center gap-16 px-8 py-12 w-full max-w-6xl">
         <div className="flex-1 flex flex-col items-center md:items-start gap-6">
             <h1 className="text-4xl md:text-5xl font-extrabold text-blue-800 mb-2 text-center md:text-left">
@@ -223,8 +219,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
