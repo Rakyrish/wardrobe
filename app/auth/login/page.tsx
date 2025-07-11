@@ -194,11 +194,12 @@ export default function LoginPage() {
             </button>
           </form>
           <p className="mt-4 text-sm text-gray-600 text-center">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <a href="/auth/signup" className="text-blue-600 hover:underline">
               Sign Up
             </a>
           </p>
+
             <button
             onClick={handleSignIn}
             className="w-full mt-4 bg-white border border-gray-300 text-gray-700 px-5 py-2 rounded-full shadow hover:bg-gray-50 transition font-semibold flex items-center justify-center gap-2"

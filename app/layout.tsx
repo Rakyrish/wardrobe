@@ -5,6 +5,12 @@ import Footer from './layout/footer/page';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'My Virtual Wardrobe',
+  description: 'Your smart digital closet for planning outfits and staying stylish.',
+};
 
 // Load Geist and Geist_Mono with error handling
 const geistSans = Geist({
