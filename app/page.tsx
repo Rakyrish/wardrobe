@@ -1,12 +1,48 @@
+"use client";
 import Image from "next/image";
-import Header from "./layout/header/page";
-import Footer from "./layout/footer/page";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { supabase } from "../lib/supabase";
 
 export default function Home() {
+  const [username, setUsername] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+
+            // useEffect(() => {
+
+            const handleGetStarted = () => {
+              const fetchUser = async () => {
+                const { data: { user }, error } = await supabase.auth.getUser();
+                if (error || !user) {
+                  router.push("/auth/login");
+                  return;
+                }
+                const { data, error: dbError } = await supabase
+                  .from("users")
+                  .select("username")
+                  .eq("id", user.id)
+                  .single();
+                if (data && !dbError) {
+                  setUsername(data.username);
+                } else {
+                  setUsername(user.user_metadata?.username || user.email);
+                }
+                setIsLoading(false);
+              };
+
+
+              fetchUser();
+              router.push("/wardrobe/add");
+            }
+            // }, [router]);}
+
+            // const handleGetStarted = () => {
+            //   router.push("/wardrobe/add");
+            // };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-100 flex flex-col items-center justify-between font-[family-name:var(--font-geist-sans)]">
-    
-     <Header />
       <main className="flex-1 flex flex-col-reverse md:flex-row items-center justify-center gap-16 px-8 py-12 w-full max-w-6xl">
         <div className="flex-1 flex flex-col items-center md:items-start gap-6">
             <h1 className="text-4xl md:text-5xl font-extrabold text-blue-800 mb-2 text-center md:text-left">
@@ -23,7 +59,7 @@ export default function Home() {
             </p>
           <div className="flex gap-4 mt-4">
             <a
-              href="#"
+              onClick={handleGetStarted}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow transition"
             >
               Get Started
@@ -183,8 +219,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

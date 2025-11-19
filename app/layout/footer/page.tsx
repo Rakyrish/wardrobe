@@ -20,7 +20,12 @@ export default function Footer(){
           <nav className="flex flex-wrap gap-6 items-center text-blue-700 font-medium text-sm">
         <a href="#" className="hover:text-pink-500 transition">Privacy Policy</a>
         <a href="#" className="hover:text-pink-500 transition">Terms of Service</a>
-        <a href="mailto:support@myvirtualwardrobe.com" className="hover:text-pink-500 transition">Contact Us</a>
+        <a href="#" className="hover:text-pink-500 transition">
+          Contact Us
+          <span className="block text-xs text-gray-500 font-normal">
+            Where to find us:<br/> 4th Floor, Pride of Hustler, <br/>Kayole, Naivasha, Nakuru County
+          </span>
+        </a>
         <a href="tel:+254746542197" className="hover:text-pink-500 transition flex items-center gap-1">
         <svg
             className="w-4 h-4 text-pink-400 animate-[vibrate_0.3s_linear_infinite]"
@@ -35,6 +40,7 @@ export default function Footer(){
                 d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.516 2.064a2 2 0 01-.45 1.958l-1.27 1.27a16.001 16.001 0 006.586 6.586l1.27-1.27a2 2 0 011.958-.45l2.064.516A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C9.163 23 1 14.837 1 5V4a2 2 0 012-2z"
             />
         </svg>
+        
         <style jsx global>{`
             @keyframes vibrate {
                 0% { transform: translate(0); }
